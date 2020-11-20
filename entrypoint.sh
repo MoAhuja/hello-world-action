@@ -6,12 +6,9 @@ echo "::set-output name=time::$time"
 
 echo "Working space == "
 echo $GITHUB_WORKSPACE
+echo pwd
 
-input="./test.json"
-while IFS= read -r line
-do
-  echo "$line"
-done < "$input"
+jq . ./attestations/attestations.json
 
 
 
