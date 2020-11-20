@@ -6,9 +6,9 @@ FROM ubuntu:18.04
 COPY entrypoint.sh /entrypoint.sh
 
 #Install JQ
-RUN ["sudo add-apt-repository ppa:eugenesan/ppa"]
-RUN ["apt-get update"]
-RUN ["apt-get install jq -y"]
+RUN add-apt-repository ppa:eugenesan/ppa
+RUN apt-get update
+RUN apt-get install jq -y
 
 # Code file to execute when the docker container starts up (`entrypoint.sh`)
 RUN ["chmod", "+x", "/entrypoint.sh"]
